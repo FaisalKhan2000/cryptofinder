@@ -1,0 +1,17 @@
+const NEWS_API_KEY = "4617106e16614174bc976bfa38ac3fed";
+
+export const getBitcoinArticles = async () => {
+  const response = await fetch(
+    `https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`
+  );
+  const json = await response.json();
+  return json;
+};
+
+export const getArticles = async (topic) => {
+  const response = await fetch(
+    `https://newsapi.org/v2/everything?q=${topic}&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`
+  );
+  const json = await response.json();
+  return json;
+};
